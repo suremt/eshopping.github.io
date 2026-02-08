@@ -3,38 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Shopping Sale</title>
+    <title>E-Shopping Sale | ඔබේ සිහින වෙළඳසැල</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 50px;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        h1 { color: #2c3e50; }
-        p { color: #7f8c8d; }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #27ae60;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
+        /* මූලික සැකසුම් */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9f9f9; }
+
+        /* Navigation Menu (උඩ කොටස) */
+        header { background: #232f3e; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 16px; transition: 0.3s; }
+        nav ul li a:hover { color: #febd69; }
+
+        /* ඇඩ්ස් පෙන්වන කොටස (Product Grid) */
+        .container { padding: 40px 5%; text-align: center; }
+        .ad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .ad-card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: 0.3s; }
+        .ad-card:hover { transform: translateY(-5px); }
+        .ad-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
+        .ad-card h3 { margin: 15px 0 10px; color: #333; }
+        .ad-card p { color: #27ae60; font-weight: bold; font-size: 18px; }
+        .buy-btn { display: inline-block; padding: 10px 20px; background: #febd69; color: #131921; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
+
+        /* Footer (යට කොටස) */
+        footer { background: #232f3e; color: white; padding: 30px 5%; text-align: center; margin-top: 50px; }
+        .footer-links a { color: #ddd; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .copyright { margin-top: 20px; font-size: 13px; color: #aaa; }
     </style>
 </head>
 <body>
+
+    <header>
+        <a href="#" class="logo">E-Shopping Sale</a>
+        <nav>
+            <ul>
+                <li><a href="#">මුල් පිටුව</a></li>
+                <li><a href="#">භාණ්ඩ</a></li>
+                <li><a href="#">අප ගැන</a></li>
+                <li><a href="#">සම්බන්ධ වන්න</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
-        <h1>E-Shopping Sale වෙත සාදරයෙන් පිළිගනිමු! 🛍️</h1>
-        <p>අපගේ වෙබ් අඩවිය ඉතා ඉක්මනින් ඔබව සම්බන්ධ කරගනි.</p>
-        <a href="#" class="btn">වැඩි විස්තර සඳහා</a>
+        <h1>අද දවසේ සුවිශේෂී දීමනා 🎁</h1>
+        <p>ඔබට අවශ්‍ය සියලුම දේ එකම තැනකින් ලබාගන්න.</p>
+
+        <div class="ad-grid" id="adContainer">
+            <div class="ad-card">
+                <img src="https://via.placeholder.com/300x200?text=Smartphone" alt="Ad 1">
+                <h3>Smart Phone</h3>
+                <p>රු. 45,000</p>
+                <a href="#" class="buy-btn">දැන්ම ගන්න</a>
+            </div>
+
+            <div class="ad-card">
+                <img src="https://via.placeholder.com/300x200?text=Laptop" alt="Ad 2">
+                <h3>High Performance Laptop</h3>
+                <p>රු. 120,000</p>
+                <a href="#" class="buy-btn">දැන්ම ගන්න</a>
+            </div>
+
+            <div class="ad-card">
+                <img src="https://via.placeholder.com/300x200?text=Watch" alt="Ad 3">
+                <h3>Smart Watch</h3>
+                <p>රු. 8,500</p>
+                <a href="#" class="buy-btn">දැන්ම ගන්න</a>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">සේවා කොන්දේසි</a> | 
+            <a href="#">පෞද්ගලිකත්ව ප්‍රතිපත්තිය</a> | 
+            <a href="#">උදව්</a>
+        </div>
+        <p class="copyright">© 2026 E-Shopping Sale. සියලුම හිමිකම් ඇවිරිණි.</p>
+    </footer>
+
+    <script>
+        // මෙහිදී ඔබට අනාගතයේදී Java Script හරහා අලුත් ඇඩ්ස් එකතු කිරීමට පුළුවන්
+        console.log("වෙබ් අඩවිය සාර්ථකව ක්‍රියාත්මකයි!");
+    </script>
+
 </body>
 </html>
